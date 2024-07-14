@@ -7,7 +7,7 @@ function Heropage() {
     <main>
       <div className="container">
         <div className="row">
-          <div className="col-md-6 mt-5 pt-4">
+          <div className="col-md-6 mt-5 ">
             <img src='/images/dices.png' alt='' className='img-fluid' /> </div>
           <div className="col-md-6 d-flex flex-column justify-content-center alignment-item-center">
             <div>
