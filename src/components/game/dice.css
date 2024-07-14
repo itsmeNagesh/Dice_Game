@@ -13,7 +13,7 @@ ul li{
     .rule{
         width: 30%;
         height: 20%;
-        background-color: #FBF1F1;
+        background-color:#f1f9fb;
     }
     .scoretop{
         font-size: 10rem;
@@ -23,7 +23,7 @@ ul li{
     .rule{
         width: 100%;
         height: 20%;
-        background-color: #FBF1F1;
+        background-color:#FBF1F1;
     }
     .scoretop{
        padding-left:20px;

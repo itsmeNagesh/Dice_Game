@@ -77,8 +77,8 @@ setshow(!show)
                     
                     </div>
                     <div>
-                    <div className='rule d-flex' style={{ display: show ? '' : 'none' }}>
-                      <div  style={{ display: show ? '' : 'none' }}> <strong className='ms-4 '>How to Play Divce Game:</strong>
+                    <div className='rule d-flex' style={{ display: show ? '' : 'none' ,}}>
+                      <div  style={{ display: show ? '' : 'none' }}> <strong className='ms-4 '>How to Play Dice Game:</strong>
                       <ul className="">
                         <li >Select any Number</li>
                         <li>Click on dice image</li>
