@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './dice.css'
 function DiceRoll() {
   const navigate=useNavigate();
@@ -19,26 +21,91 @@ function getRandomArbitrary(min, max) {
 }
 const[randomNumber,setRandomNumber]=useState(1);
 const Diceroll=()=>{
+  console.log('pp',selectedNumber)
+  if(selectedNumber!=0){
+  
  let getnumber=getRandomArbitrary(1,7);
 console.log(getnumber);
  setRandomNumber(getnumber);
  if(selectedNumber===getnumber)
  {
   setScore((pre)=>pre+getnumber);
+  notify(1);
+  setSelectedNumber(0);
+  console.log(selectedNumber,'last')
  }
  else{
   setScore((pre)=>pre-getnumber);
+  setSelectedNumber(0);
+
  }
+}
+else{
+  notify(3);
+}
 }
 const[show,setshow]=useState(false);
 const handleRule=()=>{
 setshow(!show)
 }
+const notify = (k) => {
+  if (k==1) {
+    toast.success(`🦄 Wow you win ${ selectedNumber} points`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  } else if(k==2) {
+    toast.info('Score is Reset Now', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+      });
+  }
+  else if(k==3){
+    toast.warn('Please select Number', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+      });
+  }
+};
 
   return (
     <>
       <main>
       <button  className='btn btn-dark m-1' onClick={()=>navigate("/")}>Back</button>
+      <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
         <div className="container">
           <div className="row">
                         <div className="col-md-6 mt-1">
@@ -72,7 +139,7 @@ setshow(!show)
                     <div className="text-center cursor-pointer">
                       <img src={`/images/dice_${randomNumber}.png`} alt="Roll Dice"  onClick={Diceroll}  style={{cursor:"pointer"}}/>
                       <h5 className="fw-bold ms-3">Click on Dice to roll</h5>
-                      <button className="border border-black rounded py-1 fw-bold ms-3" style={{ width: "13rem" }} onClick={()=>{setScore(0)}}>Reset Score</button><br />
+                      <button className="border border-black rounded py-1 fw-bold ms-3" style={{ width: "13rem" }} onClick={()=>{setScore(0),notify(2)}}>Reset Score</button><br />
                       <button className="border border-black rounded py-1 fw-bold ms-3 bg-dark text-light mt-3" style={{ width: "13rem" }} onClick={handleRule}>Show Rule</button>
                     
                     </div>
