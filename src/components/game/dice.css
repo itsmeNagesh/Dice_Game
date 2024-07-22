@@ -1,48 +1,17 @@
-ul li{
-    list-style: none;
-    font-weight: 500;
-    font-size:0.7rem;
-}
-/* .rule{
-    width: 30%;
-    height: 20%;
-    background-color: #FBF1F1;
-} */
+.scoretop{
 
-@media (max-width:"1500px") {
-    .rule{
-        width: 30%;
-        height: 20%;
-        background-color:#f1f9fb;
-    }
-    .scoretop{
-        font-size: 10rem;
-    }
+    margin-top: 5vh;
+    margin-left: 16vh;
 }
-@media (max-width:"550px") {
+@media only screen and (max-width:"600px") {
     .rule{
         width: 100%;
         height: 20%;
         background-color:#FBF1F1;
     }
     .scoretop{
-       padding-left:20px;
-    }
-}
-@media (max-width:"400px") {
-    .rule{
-        width: 30%;
-        height: 20%;
-        background-color: #FBF1F1;
-    }
-    .scoretop{
-        padding-left:20%;
-     }
-}
-@media (max-width:"350px") {
-    .rule{
-        width: 30%;
-        height: 20%;
-        background-color: #FBF1F1;
+        background-color: red;
+        margin-top: 5vh;
+        margin-left: 16vh;
     }
 }

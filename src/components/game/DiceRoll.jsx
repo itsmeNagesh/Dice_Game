@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import  './dice.css'
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './dice.css'
+
 function DiceRoll() {
   const navigate=useNavigate();
   const [score, setScore] = useState(0);
